@@ -1,8 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Functions to create a special cached matrix object [makeCacheMatrix] along with a function [cacheSolve]
+## to find the inverse matrix. 
 
-## Write a short comment describing this function
-
+## Function to create an object for holding the matrix and inverse when computed.
+## To use store the returned object in a var like: myCacheMatrix<-makeCacheMatrix(rbind(c(1, -1/4), c(-1/4, 1)))
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
     set <- function(y) {
@@ -18,8 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## Function to compute the inverse of the matrix returned from makeCacheMatrix, or retreive from cache if already solved.
+## Use: cacheSolve(myCacheMatrix)
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     m <- x$getinverse()
